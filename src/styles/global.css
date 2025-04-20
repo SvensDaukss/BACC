@@ -1,0 +1,126 @@
+/* Dark Theme Global Styles */
+:root {
+  --background-color: #121212;
+  --foreground-color: #ffffff;
+  --primary-color: #1db954; /* Spotify green for accents */
+  --secondary-color: #282828;
+  --text-color: #e0e0e0;
+  --text-muted-color: #b3b3b3;
+  --border-color: #333333;
+  --error-color: #ff5252;
+  --success-color: #4caf50;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+main {
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the content */
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center; /* Optional: Center-align text */
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--foreground-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1aa34a; /* Slightly darker green */
+}
+
+input, select, textarea {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted-color);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.success {
+  color: var(--success-color);
+}
+
+hr {
+  border: 1px solid var(--border-color);
+}
+
+.navbar {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar a {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+}
+
+/* Global styles for responsiveness */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+  }
+
+  .profile-section, .drink-section {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+
+  button {
+    font-size: 0.9rem; /* Adjust button size */
+  }
+}
+
+@media (min-width: 769px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr; /* Two equal columns for larger screens */
+  }
+}
