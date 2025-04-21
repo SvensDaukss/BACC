@@ -1,9 +1,9 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import path from 'path';
 
 export default {
   kit: {
-    adapter: adapter(),
+    adapter: adapter(), // Use the Node.js adapter
     alias: {
       $database: path.resolve('src/database'),
       $logic: path.resolve('src/logic'),
